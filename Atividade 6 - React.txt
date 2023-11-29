@@ -1,0 +1,131 @@
+Atividade 6 - React
+
+Para criar um componente com roteamento entre telas, precisamos usar o pacote `react-router-dom`. O pacote `react-router-dom` nos permite criar rotas e navegar entre elas.
+
+Vamos criar um componente chamado `App` que renderiza uma barra de navegação com duas opções: `Tela 1` e `Tela 2`. O código do componente `App` deve ser o seguinte:
+
+```javascript
+import React, { useState } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+const App = () => {
+  const [rota, setRota] = useState("tela1");
+
+  return (
+    <BrowserRouter>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#" onClick={() => setRota("tela1")}>Tela 1</a>
+            </li>
+            <li>
+              <a href="#" onClick={() => setRota("tela2")}>Tela 2</a>
+            </li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route path="/tela1" component={Tela1} />
+          <Route path="/tela2" component={Tela2} />
+        </Switch>
+      </div>
+    </BrowserRouter>
+  );
+};
+
+export default App;
+```
+
+Esse componente usa o hook `useState()` para armazenar a rota atual na variável `rota`. A barra de navegação tem dois links, um para a rota `tela1` e outro para a rota `tela2`.
+
+O componente `App` usa o componente `Switch` para renderizar o componente correspondente à rota atual.
+
+Vamos criar dois componentes, `Tela1` e `Tela2`, que serão renderizados nas rotas `tela1` e `tela2`. O código do componente `Tela1` deve ser o seguinte:
+
+```javascript
+const Tela1 = () => {
+  return (
+    <div>
+      <h1>Tela 1</h1>
+    </div>
+  );
+};
+
+export default Tela1;
+```
+
+O código do componente `Tela2` deve ser o seguinte:
+
+```javascript
+const Tela2 = () => {
+  return (
+    <div>
+      <h1>Tela 2</h1>
+    </div>
+  );
+};
+
+export default Tela2;
+```
+
+Ao acessar o endereço http://localhost:3000/, você deverá ver a barra de navegação com as duas opções. Ao clicar em uma das opções, a rota correspondente será ativada e o componente correspondente será renderizado.
+
+**Código completo**
+
+```
+// src/App.js
+
+import React, { useState } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+const App = () => {
+  const [rota, setRota] = useState("tela1");
+
+  return (
+    <BrowserRouter>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#" onClick={() => setRota("tela1")}>Tela 1</a>
+            </li>
+            <li>
+              <a href="#" onClick={() => setRota("tela2")}>Tela 2</a>
+            </li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route path="/tela1" component={Tela1} />
+          <Route path="/tela2" component={Tela2} />
+        </Switch>
+      </div>
+    </BrowserRouter>
+  );
+};
+
+export default App;
+
+// src/components/Tela1.js
+
+const Tela1 = () => {
+  return (
+    <div>
+      <h1>Tela 1</h1>
+    </div>
+  );
+};
+
+export default Tela1;
+
+// src/components/Tela2.js
+
+const Tela2 = () => {
+  return (
+    <div>
+      <h1>Tela 2</h1>
+    </div>
+  );
+};
+
+export default Tela2;
+```
