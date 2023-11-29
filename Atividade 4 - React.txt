@@ -1,0 +1,137 @@
+Atividade 4 - React
+Para utilizar props em um componente React, precisamos definir um componente com um atributo `props`. O atributo `props` é um objeto que contém os dados que serão passados para o componente.
+
+No código anterior, vamos criar um componente chamado `Ola` que recebe o nome do usuário como prop. O código do componente `Ola` deve ser o seguinte:
+
+```javascript
+const Ola = ({ nome }) => {
+  return (
+    <div>
+      <h1>Olá, {nome}!</h1>
+    </div>
+  );
+};
+
+export default Ola;
+```
+
+Esse componente renderiza o texto `Olá, {nome}!`, onde `{nome}` é o valor da prop `nome`.
+
+Para usar o componente `Ola`, precisamos importá-lo no arquivo `App.js`. O código do arquivo `App.js` deve ficar assim:
+
+```javascript
+import React from "react";
+import Ola from "./components/Ola";
+
+function App() {
+  return (
+    <div>
+      <Ola nome="Bard" />
+    </div>
+  );
+}
+
+export default App;
+```
+
+Esse código importa o componente `Ola` e o renderiza com o nome `Bard` como prop.
+
+Ao acessar o endereço http://localhost:3000/, você deverá ver a seguinte saída:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello, Bard!</title>
+</head>
+<body>
+  <div>
+    <h1>Olá, Bard!</h1>
+  </div>
+</body>
+</html>
+```
+
+**Código completo**
+
+```
+// src/components/Ola.js
+
+const Ola = ({ nome }) => {
+  return (
+    <div>
+      <h1>Olá, {nome}!</h1>
+    </div>
+  );
+};
+
+export default Ola;
+
+// src/App.js
+
+import React from "react";
+import Ola from "./components/Ola";
+
+function App() {
+  return (
+    <div>
+      <Ola nome="Bard" />
+    </div>
+  );
+}
+
+export default App;
+```
+
+**Outro exemplo**
+
+Vamos criar outro exemplo, agora usando um componente com mais de uma prop. O código do componente `Ola` deve ser o seguinte:
+
+```javascript
+const Ola = ({ nome, idade }) => {
+  return (
+    <div>
+      <h1>Olá, {nome}! Você tem {idade} anos.</h1>
+    </div>
+  );
+};
+
+export default Ola;
+```
+
+Esse componente renderiza o texto `Olá, {nome}! Você tem {idade} anos.`, onde `{nome}` e `{idade}` são os valores das props `nome` e `idade`.
+
+Para usar o componente `Ola`, precisamos importá-lo no arquivo `App.js` e passar os valores das props `nome` e `idade`. O código do arquivo `App.js` deve ficar assim:
+
+```javascript
+import React from "react";
+import Ola from "./components/Ola";
+
+function App() {
+  return (
+    <div>
+      <Ola nome="Bard" idade={30} />
+    </div>
+  );
+}
+
+export default App;
+```
+
+Ao acessar o endereço http://localhost:3000/, você deverá ver a seguinte saída:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello, Bard!</title>
+</head>
+<body>
+  <div>
+    <h1>Olá, Bard! Você tem 30 anos.</h1>
+  </div>
+</body>
+</html>
+```
