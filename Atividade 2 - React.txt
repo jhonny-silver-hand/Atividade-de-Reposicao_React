@@ -1,0 +1,40 @@
+Atividade 2 - React
+
+Para modificar o código do arquivo `App.js` para que, ao abrir http://localhost:3000/, o retorno seja o seu nome, basta alterar o conteúdo do componente `App()` para o seguinte:
+
+```javascript
+import React from "react";
+
+function App() {
+  return (
+    <div>
+      <h1>Olá, {nome}!</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+
+
+
+Nesse código, adicionamos uma variável chamada `nome` e atribuímos a ela o seu nome. Em seguida, utilizamos a variável `nome` para renderizar o texto `Olá, {nome}!`.
+
+Por exemplo, se o seu nome for "Bard", o código renderizará a seguinte saída:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello, Bard!</title>
+</head>
+<body>
+  <div>
+    <h1>Olá, Bard!</h1>
+  </div>
+</body>
+</html>
+```
+
+Para alterar o código para o seu nome, basta substituir o valor da variável `nome` pelo seu nome.
