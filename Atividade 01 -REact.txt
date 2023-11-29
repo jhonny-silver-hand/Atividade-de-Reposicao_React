@@ -1,0 +1,87 @@
+Atividade 01 -REact
+**Passo 1: Instalar o Node.js**
+
+O primeiro passo é instalar o Node.js, que é a plataforma de execução do React. Para instalar o Node.js, siga os passos abaixo:
+
+1. Acesse o site do Node.js e baixe o instalador para o seu sistema operacional.
+2. Execute o instalador e siga as instruções.
+3. Após a instalação, verifique se o Node.js está instalado corretamente digitando o seguinte comando no terminal:
+
+```
+node -v
+```
+
+Se a instalação foi bem-sucedida, você deverá ver a versão do Node.js instalada.
+
+**Passo 2: Instalar o React**
+
+Para instalar o React, use o seguinte comando no terminal:
+
+```
+npm install react react-dom
+```
+
+Esse comando instalará as bibliotecas principais do React: React e React DOM.
+
+**Passo 3: Criar um projeto React**
+
+Para criar um projeto React, use o seguinte comando no terminal:
+
+```
+npx create-react-app meu-projeto
+```
+
+Esse comando criará um diretório chamado `meu-projeto` com um projeto React inicial.
+
+**Passo 4: Adicionar um componente**
+
+Para adicionar um componente ao projeto, crie um arquivo chamado `App.js` no diretório `src`. O conteúdo do arquivo `App.js` deve ser o seguinte:
+
+```javascript
+import React from "react";
+
+function App() {
+  return (
+    <div>
+      <h1>Hello, world!</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+
+Esse componente renderiza um simples texto `Hello, world!`.
+
+**Passo 5: Rodar o projeto**
+
+Para rodar o projeto, use o seguinte comando no terminal:
+
+```
+npm start
+```
+
+Esse comando irá iniciar o servidor de desenvolvimento do React. O projeto estará acessível no endereço http://localhost:3000.
+
+**Exemplo de saída**
+
+Ao acessar o endereço http://localhost:3000, você deverá ver a seguinte saída:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello, world!</title>
+</head>
+<body>
+  <div>
+    <h1>Hello, world!</h1>
+  </div>
+</body>
+</html>
+```
+
+**Conclusão**
+
+Neste tutorial, você aprendeu a instalar e rodar um programa React.
