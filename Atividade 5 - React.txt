@@ -1,0 +1,94 @@
+Atividade 5 - React
+Para criar um botão usando hooks, precisamos usar o hook `useState()`. O hook `useState()` nos permite armazenar um estado no componente.
+
+Vamos criar um componente chamado `Botao` que recebe um valor inicial como prop. O código do componente `Botao` deve ser o seguinte:
+
+```javascript
+const Botao = ({ valorInicial }) => {
+  const [valor, setValor] = useState(valorInicial);
+
+  return (
+    <div>
+      <button onClick={() => setValor(valor + 1)}>Aumentar</button>
+      <h1>Valor: {valor}</h1>
+    </div>
+  );
+};
+
+export default Botao;
+```
+
+Esse componente armazena o valor inicial na variável `valorInicial`. Em seguida, usa o hook `useState()` para armazenar o valor atual na variável `valor`.
+
+O botão tem um evento de clique que chama a função `setValor()`. A função `setValor()` atualiza o valor atual com o valor atual acrescido de 1.
+
+Para usar o componente `Botao`, precisamos importá-lo no arquivo `App.js`. O código do arquivo `App.js` deve ficar assim:
+
+```javascript
+import React from "react";
+import Botao from "./components/Botao";
+
+function App() {
+  return (
+    <div>
+      <Botao valorInicial={0} />
+    </div>
+  );
+}
+
+export default App;
+```
+
+Ao acessar o endereço http://localhost:3000/, você deverá ver a seguinte saída:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello, Bard!</title>
+</head>
+<body>
+  <div>
+    <button onClick="">Aumentar</button>
+    <h1>Valor: 0</h1>
+  </div>
+</body>
+</html>
+```
+
+Ao clicar no botão, o valor atual será incrementado em 1. Por exemplo, se você clicar no botão 5 vezes, o valor atual será 5.
+
+**Código completo**
+
+```
+// src/components/Botao.js
+
+const Botao = ({ valorInicial }) => {
+  const [valor, setValor] = useState(valorInicial);
+
+  return (
+    <div>
+      <button onClick={() => setValor(valor + 1)}>Aumentar</button>
+      <h1>Valor: {valor}</h1>
+    </div>
+  );
+};
+
+export default Botao;
+
+// src/App.js
+
+import React from "react";
+import Botao from "./components/Botao";
+
+function App() {
+  return (
+    <div>
+      <Botao valorInicial={0} />
+    </div>
+  );
+}
+
+export default App;
+```
