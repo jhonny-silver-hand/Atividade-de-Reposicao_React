@@ -1,0 +1,85 @@
+Atividade 3 - React
+Para criar uma nova pasta dentro do diretório `src`, use o seguinte comando no terminal:
+
+```
+mkdir utils
+```
+
+Esse comando criará uma pasta chamada `utils` no diretório `src`.
+
+Para criar um arquivo JavaScript com uma função que retorne uma mensagem ao chamar http://localhost:3000/, crie um arquivo chamado `mensagem.js` na pasta `utils`. O conteúdo do arquivo `mensagem.js` deve ser o seguinte:
+
+```javascript
+export default function mensagem() {
+  return "Olá, mundo!";
+}
+```
+
+Essa função retorna o texto `Olá, mundo!`.
+
+Para tornar a função acessível em outro código, precisamos exportá-la. Para isso, usamos a palavra-chave `export` seguida do nome da função. No nosso caso, o nome da função é `mensagem`. Portanto, o código deve ficar assim:
+
+```javascript
+export default function mensagem() {
+  return "Olá, mundo!";
+}
+```
+
+Agora, precisamos importar a função `mensagem` no arquivo `App.js`. Para isso, usamos a palavra-chave `import`. O código do arquivo `App.js` deve ficar assim:
+
+```javascript
+import React from "react";
+import mensagem from "./utils/mensagem";
+
+function App() {
+  return (
+    <div>
+      <h1>{mensagem()}</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+
+Ao acessar o endereço http://localhost:3000/, você deverá ver a seguinte saída:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Olá, mundo!</title>
+</head>
+<body>
+  <div>
+    <h1>Olá, mundo!</h1>
+  </div>
+</body>
+</html>
+```
+
+**Código completo**
+
+```
+// src/mensagem.js
+
+export default function mensagem() {
+  return "Olá, mundo!";
+}
+
+// src/App.js
+
+import React from "react";
+import mensagem from "./utils/mensagem";
+
+function App() {
+  return (
+    <div>
+      <h1>{mensagem()}</h1>
+    </div>
+  );
+}
+
+export default App;
+```
